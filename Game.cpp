@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <memory>
+#include <iostream>
 
 #include "MenuScreen.h"
 #include "Game.h"
@@ -12,21 +13,25 @@ const sf::Time Game::TimePerFrame = sf::seconds(1.f / 10.f);
 std::shared_ptr<Screen> Game::Screen = std::make_shared<MenuScreen>();
 
 Game::Game()
-: window_(sf::VideoMode(Game::Width, Game::Height), "sfSnake")
+: window_(sf::VideoMode({Game::Width, Game::Height}), "sfSnake")
 {
-	bgMusic_.openFromFile("Music/bg_music.wav");
-	bgMusic_.setLoop(true);
-	bgMusic_.play();
+	//add the check to ensure the file is correctly opened
+	if(bgMusic_.openFromFile("Music/bg_music.wav")){
+		bgMusic_.setLoopPoints({sf::milliseconds(0),sf::seconds(50)});//fix the bug:music should use setLoopPoints instead of setLoop
+		bgMusic_.play();
+	}
+	else{
+		std::cerr<<"Failed to open background music file:Music/bg_music.wav"<<std::endl;
+	}
 }
 
 void Game::handleInput()
 {
-	sf::Event event;
-
-	while (window_.pollEvent(event))
-	{
-		if (event.type == sf::Event::Closed)
+	//fix the wrong Close event handle
+	while(const std::optional event = window_.pollEvent()){
+		if(event->is<sf::Event::Closed>()){
 			window_.close();
+		}
 	}
 
 	Game::Screen->handleInput(window_);

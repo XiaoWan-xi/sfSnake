@@ -1,0 +1,14 @@
+# Target labels
+ ogg-populate
+# Source files and their labels
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/CMakeFiles/ogg-populate
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/CMakeFiles/ogg-populate.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/CMakeFiles/ogg-populate-complete.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-build.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-configure.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-download.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-install.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-mkdir.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-patch.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-test.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-update.rule

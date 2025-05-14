@@ -1,0 +1,14 @@
+# Target labels
+ vorbis-populate
+# Source files and their labels
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate-complete.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-build.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-configure.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-download.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-install.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-mkdir.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-patch.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-test.rule
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-update.rule

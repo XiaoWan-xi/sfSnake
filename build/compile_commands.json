@@ -1,0 +1,56 @@
+[
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -isystem D:/Develop/SFML-3.0.0/include -g -std=gnu++17 -Wall -Wextra -o CMakeFiles\\sfSnake.dir\\main.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\main.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\main.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\main.cpp.obj"
+},
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -isystem D:/Develop/SFML-3.0.0/include -g -std=gnu++17 -Wall -Wextra -o CMakeFiles\\sfSnake.dir\\Fruit.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\Fruit.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\Fruit.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\Fruit.cpp.obj"
+},
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -isystem D:/Develop/SFML-3.0.0/include -g -std=gnu++17 -Wall -Wextra -o CMakeFiles\\sfSnake.dir\\Game.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\Game.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\Game.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\Game.cpp.obj"
+},
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -isystem D:/Develop/SFML-3.0.0/include -g -std=gnu++17 -Wall -Wextra -o CMakeFiles\\sfSnake.dir\\GameOverScreen.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\GameOverScreen.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\GameOverScreen.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\GameOverScreen.cpp.obj"
+},
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -isystem D:/Develop/SFML-3.0.0/include -g -std=gnu++17 -Wall -Wextra -o CMakeFiles\\sfSnake.dir\\GameScreen.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\GameScreen.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\GameScreen.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\GameScreen.cpp.obj"
+},
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -isystem D:/Develop/SFML-3.0.0/include -g -std=gnu++17 -Wall -Wextra -o CMakeFiles\\sfSnake.dir\\MenuScreen.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\MenuScreen.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\MenuScreen.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\MenuScreen.cpp.obj"
+},
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -isystem D:/Develop/SFML-3.0.0/include -g -std=gnu++17 -Wall -Wextra -o CMakeFiles\\sfSnake.dir\\Screen.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\Screen.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\Screen.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\Screen.cpp.obj"
+},
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -isystem D:/Develop/SFML-3.0.0/include -g -std=gnu++17 -Wall -Wextra -o CMakeFiles\\sfSnake.dir\\Snake.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\Snake.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\Snake.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\Snake.cpp.obj"
+},
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -isystem D:/Develop/SFML-3.0.0/include -g -std=gnu++17 -Wall -Wextra -o CMakeFiles\\sfSnake.dir\\SnakeNode.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\SnakeNode.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\SnakeNode.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\SnakeNode.cpp.obj"
+}
+]

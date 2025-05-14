@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate-complete.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-build.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-configure.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-download.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-install.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-mkdir.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-patch.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-test.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vorbis-populate"
+		],
+		"name" : "vorbis-populate"
+	}
+}

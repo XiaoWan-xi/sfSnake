@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/CMakeFiles/flac-populate"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/CMakeFiles/flac-populate.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/CMakeFiles/flac-populate-complete.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-build.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-download.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-install.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-mkdir.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-test.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"flac-populate"
+		],
+		"name" : "flac-populate"
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate-complete.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test.rule"
+		},
+		{
+			"file" : "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"sfml-populate"
+		],
+		"name" : "sfml-populate"
+	}
+}

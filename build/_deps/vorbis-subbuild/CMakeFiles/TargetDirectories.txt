@@ -1,0 +1,3 @@
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate.dir
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/CMakeFiles/edit_cache.dir
+E:/OOP/homework/lab/final/sfSnake/build/_deps/vorbis-subbuild/CMakeFiles/rebuild_cache.dir

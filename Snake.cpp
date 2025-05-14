@@ -13,16 +13,16 @@ using namespace sfSnake;
 
 const int Snake::InitialSize = 5;
 
-Snake::Snake() : direction_(Direction::Up), hitSelf_(false)
+
+//use the initial list to initialize sound as its default construtctor is removed in new version
+Snake::Snake() : direction_(Direction::Up), hitSelf_(false),pickupSound_(pickupBuffer_),dieSound_(dieBuffer_)
 {
 	initNodes();
 
 	pickupBuffer_.loadFromFile("Sounds/pickup.aiff");
-	pickupSound_.setBuffer(pickupBuffer_);
 	pickupSound_.setVolume(30);
 
 	dieBuffer_.loadFromFile("Sounds/die.wav");
-	dieSound_.setBuffer(dieBuffer_);
 	dieSound_.setVolume(50);
 }
 
@@ -38,13 +38,13 @@ void Snake::initNodes()
 
 void Snake::handleInput()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
 		direction_ = Direction::Up;
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
 		direction_ = Direction::Down;
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
 		direction_ = Direction::Left;
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
 		direction_ = Direction::Right;
 }
 
@@ -59,9 +59,9 @@ void Snake::checkFruitCollisions(std::vector<Fruit>& fruits)
 {
 	decltype(fruits.begin()) toRemove = fruits.end();
 
-	for (auto& it = fruits.begin(); it != fruits.end(); ++it)
+	for (auto it = fruits.begin(); it != fruits.end(); ++it)
 	{
-		if (it->getBounds().intersects(nodes_[0].getBounds()))
+		if (it->getBounds().findIntersection(nodes_[0].getBounds()))
 			toRemove = it;
 	}
 
@@ -112,7 +112,7 @@ void Snake::checkSelfCollisions()
 
 	for (decltype(nodes_.size()) i = 1; i < nodes_.size(); ++i)
 	{
-		if (headNode.getBounds().intersects(nodes_[i].getBounds()))
+		if (headNode.getBounds().findIntersection(nodes_[i].getBounds()))
 		{
 			dieSound_.play();
 			sf::sleep(sf::seconds(dieBuffer_.getDuration().asSeconds()));
