@@ -16,7 +16,7 @@ GameScreen::GameScreen() : snake_()
 
 void GameScreen::handleInput(sf::RenderWindow& window)
 {
-	snake_.handleInput();
+	snake_.handleInput(window);
 }
 
 void GameScreen::update(sf::Time delta)

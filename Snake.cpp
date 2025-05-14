@@ -15,7 +15,7 @@ const int Snake::InitialSize = 5;
 
 
 //use the initial list to initialize sound as its default construtctor is removed in new version
-Snake::Snake() : direction_(Direction::Up), hitSelf_(false),pickupSound_(pickupBuffer_),dieSound_(dieBuffer_)
+Snake::Snake() : direction_({0,-1}), hitSelf_(false),pickupSound_(pickupBuffer_),dieSound_(dieBuffer_)
 {
 	initNodes();
 
@@ -36,16 +36,14 @@ void Snake::initNodes()
 	}
 }
 
-void Snake::handleInput()
+void Snake::handleInput(sf::RenderWindow& window)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
-		direction_ = Direction::Up;
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
-		direction_ = Direction::Down;
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
-		direction_ = Direction::Left;
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
-		direction_ = Direction::Right;
+	//change the input frow four keys into the mouse click
+	if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+	{
+		sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+		direction_ = {static_cast<float>(mousePos.x) - position_.x, static_cast<float>(mousePos.y) - position_.y};
+	}
 }
 
 void Snake::update(sf::Time delta)
@@ -75,25 +73,10 @@ void Snake::checkFruitCollisions(std::vector<Fruit>& fruits)
 
 void Snake::grow()
 {
-	switch (direction_)
-	{
-	case Direction::Up:
-		nodes_.push_back(SnakeNode(sf::Vector2f(nodes_[nodes_.size() - 1].getPosition().x,
-			nodes_[nodes_.size() - 1].getPosition().y + SnakeNode::Height)));
-		break;
-	case Direction::Down:
-		nodes_.push_back(SnakeNode(sf::Vector2f(nodes_[nodes_.size() - 1].getPosition().x,
-			nodes_[nodes_.size() - 1].getPosition().y - SnakeNode::Height)));
-		break;
-	case Direction::Left:
-		nodes_.push_back(SnakeNode(sf::Vector2f(nodes_[nodes_.size() - 1].getPosition().x + SnakeNode::Width,
-			nodes_[nodes_.size() - 1].getPosition().y)));
-		break;
-	case Direction::Right:
-		nodes_.push_back(SnakeNode(sf::Vector2f(nodes_[nodes_.size() - 1].getPosition().x - SnakeNode::Width,
-			nodes_[nodes_.size() - 1].getPosition().y)));
-		break;
-	}
+	//also change the grow function to fit more direction
+	sf::Vector2f normalDirection=direction_.normalized();
+	nodes_.push_back(SnakeNode(sf::Vector2f(nodes_[nodes_.size() - 1].getPosition().x+SnakeNode::Width*normalDirection.x,
+	 		nodes_[nodes_.size() - 1].getPosition().y + SnakeNode::Height*normalDirection.y)));
 }
 
 unsigned Snake::getSize() const
@@ -142,21 +125,23 @@ void Snake::move()
 		nodes_[i].setPosition(nodes_.at(i - 1).getPosition());
 	}
 
-	switch (direction_)
-	{
-	case Direction::Up:
-		nodes_[0].move(0, -SnakeNode::Height);
-		break;
-	case Direction::Down:
-		nodes_[0].move(0, SnakeNode::Height);
-		break;
-	case Direction::Left:
-		nodes_[0].move(-SnakeNode::Width, 0);
-		break;
-	case Direction::Right:
-		nodes_[0].move(SnakeNode::Width, 0);
-		break;
-	}
+	// switch (direction_)
+	// {
+	// case Direction::Up:
+	// 	nodes_[0].move(0, -SnakeNode::Height);
+	// 	break;
+	// case Direction::Down:
+	// 	nodes_[0].move(0, SnakeNode::Height);
+	// 	break;
+	// case Direction::Left:
+	// 	nodes_[0].move(-SnakeNode::Width, 0);
+	// 	break;
+	// case Direction::Right:
+	// 	nodes_[0].move(SnakeNode::Width, 0);
+	// 	break;
+	// }
+	sf::Vector2f normalDirection=direction_.normalized();
+	nodes_[0].move(SnakeNode::Width*normalDirection.x,SnakeNode::Height*normalDirection.y);
 }
 
 void Snake::render(sf::RenderWindow& window)

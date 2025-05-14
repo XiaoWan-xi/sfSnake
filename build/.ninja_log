@@ -226,3 +226,8 @@
 92	2184	7689013715078673	CMakeFiles/sfSnake.dir/Snake.cpp.obj	fb95f5d0aa2095e6
 80	2659	7689013714967273	CMakeFiles/sfSnake.dir/GameScreen.cpp.obj	83d654cd40f70e0a
 2659	3917	7689013740818771	bin/sfSnake.exe	7b0bd32a869ce7a1
+5	1722	7689034753436452	CMakeFiles/sfSnake.dir/GameOverScreen.cpp.obj	28bed810c4ab2fd
+14	1779	7689034753534642	CMakeFiles/sfSnake.dir/MenuScreen.cpp.obj	5515854ecdf3dc08
+18	1829	7689034753561178	CMakeFiles/sfSnake.dir/Snake.cpp.obj	fb95f5d0aa2095e6
+10	1920	7689034753484460	CMakeFiles/sfSnake.dir/GameScreen.cpp.obj	83d654cd40f70e0a
+1920	2410	7689034772541703	bin/sfSnake.exe	7b0bd32a869ce7a1
