@@ -77,7 +77,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-build/src/cmake_install.cmake")
-  include("E:/OOP/homework/lab/final/sfSnake/build/_deps/flac-build/microbench/cmake_install.cmake")
 
 endif()
 

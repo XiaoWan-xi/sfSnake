@@ -52,13 +52,13 @@ endif()
 
 execute_process(
   COMMAND "D:/Git/Git/cmd/git.exe"
-          checkout "3.0.0" --
+          checkout "master" --
   WORKING_DIRECTORY "E:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-src"
   RESULT_VARIABLE error_code
   ${maybe_show_command}
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to checkout tag: '3.0.0'")
+  message(FATAL_ERROR "Failed to checkout tag: 'master'")
 endif()
 
 set(init_submodules TRUE)

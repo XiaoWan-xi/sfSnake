@@ -42,7 +42,9 @@ void Snake::handleInput(sf::RenderWindow& window)
 	if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
 		sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-		direction_ = {static_cast<float>(mousePos.x) - position_.x, static_cast<float>(mousePos.y) - position_.y};
+		sf::Vector2f headPos = nodes_[0].getPosition();
+		direction_ = {static_cast<float>(mousePos.x) - headPos.x, static_cast<float>(mousePos.y) - headPos.y};
+		direction_=direction_.normalized();
 	}
 }
 
@@ -74,9 +76,20 @@ void Snake::checkFruitCollisions(std::vector<Fruit>& fruits)
 void Snake::grow()
 {
 	//also change the grow function to fit more direction
-	sf::Vector2f normalDirection=direction_.normalized();
-	nodes_.push_back(SnakeNode(sf::Vector2f(nodes_[nodes_.size() - 1].getPosition().x+SnakeNode::Width*normalDirection.x,
-	 		nodes_[nodes_.size() - 1].getPosition().y + SnakeNode::Height*normalDirection.y)));
+	sf::Vector2f lastPos = nodes_[nodes_.size()-1].getPosition();
+	sf::Vector2f secondLastPos = nodes_.size()>1?nodes_[nodes_.size()-2].getPosition():lastPos;
+
+	sf::Vector2f tailDirection = {lastPos.x-secondLastPos.x,lastPos.y-secondLastPos.y};
+
+	if(nodes_.size()<=1||(tailDirection.x==0&&tailDirection.y==0)){
+		tailDirection.x=-direction_.x;
+		tailDirection.y=-direction_.y;
+	}
+	//make the direction of grow more suitable
+	tailDirection=tailDirection.normalized();
+
+	nodes_.push_back(SnakeNode(sf::Vector2f(lastPos.x+SnakeNode::Width*tailDirection.x,lastPos.y+SnakeNode::Height*tailDirection.y)));
+
 }
 
 unsigned Snake::getSize() const
@@ -93,7 +106,7 @@ void Snake::checkSelfCollisions()
 {
 	SnakeNode& headNode = nodes_[0];
 
-	for (decltype(nodes_.size()) i = 1; i < nodes_.size(); ++i)
+	for (decltype(nodes_.size()) i = 3; i < nodes_.size(); ++i)
 	{
 		if (headNode.getBounds().findIntersection(nodes_[i].getBounds()))
 		{
@@ -124,24 +137,7 @@ void Snake::move()
 	{
 		nodes_[i].setPosition(nodes_.at(i - 1).getPosition());
 	}
-
-	// switch (direction_)
-	// {
-	// case Direction::Up:
-	// 	nodes_[0].move(0, -SnakeNode::Height);
-	// 	break;
-	// case Direction::Down:
-	// 	nodes_[0].move(0, SnakeNode::Height);
-	// 	break;
-	// case Direction::Left:
-	// 	nodes_[0].move(-SnakeNode::Width, 0);
-	// 	break;
-	// case Direction::Right:
-	// 	nodes_[0].move(SnakeNode::Width, 0);
-	// 	break;
-	// }
-	sf::Vector2f normalDirection=direction_.normalized();
-	nodes_[0].move(SnakeNode::Width*normalDirection.x,SnakeNode::Height*normalDirection.y);
+	nodes_[0].move(SnakeNode::Width*direction_.x,SnakeNode::Height*direction_.y);
 }
 
 void Snake::render(sf::RenderWindow& window)
