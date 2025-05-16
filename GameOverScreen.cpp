@@ -6,13 +6,15 @@
 #include "Game.h"
 #include "GameScreen.h"
 #include "GameOverScreen.h"
+#include "SettingScreen.h"
 
 using namespace sfSnake;
 
 //use the initial list to initialize text as its default construtctor is removed in new version
 GameOverScreen::GameOverScreen(std::size_t score) : score_(score),text_(font_,"Your score: " + std::to_string(score) + "!"
 		"\n\nPress [SPACE] to retry"
-		"\n\nPress [ESC] to quit")
+		"\n\nPress [ESC] to quit"
+		"\nPress [S] to setting")
 {
 	//use new version openFromFile instead of loadFromFile
 	//and add a check to insure the file is correctly opened
@@ -33,6 +35,8 @@ void GameOverScreen::handleInput(sf::RenderWindow& window)
 		Game::Screen = std::make_shared<GameScreen>();
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
 		window.close();
+	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+		Game::Screen = std::make_shared<SettingScreen>();
 }
 
 void GameOverScreen::update(sf::Time delta)

@@ -20,9 +20,16 @@ public:
 
 	void generateFruit();
 
+	void showGrid(sf::RenderWindow& window);
+
+	static void setGridVisible(bool visible);
+
+
+
 private:
 	Snake snake_;
 	std::vector<Fruit> fruit_;
+	static bool gridVisible ;
 };
 }
 

@@ -10,6 +10,8 @@ using namespace sfSnake;
 
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 10.f);
 
+sf::Color Game::bgColor = sf::Color::Black;
+
 std::shared_ptr<Screen> Game::Screen = std::make_shared<MenuScreen>();
 
 Game::Game()
@@ -44,7 +46,7 @@ void Game::update(sf::Time delta)
 
 void Game::render()
 {
-	window_.clear();
+	window_.clear(bgColor);
 	Game::Screen->render(window_);
 	window_.display();
 }

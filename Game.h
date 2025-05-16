@@ -16,6 +16,7 @@ class Game
 public:
 	Game();
 
+
 	void run();
 
 	void handleInput();
@@ -24,8 +25,10 @@ public:
 
 	static const int Width = 640;
 	static const int Height = 480;
+	static sf::Color bgColor;
 
 	static std::shared_ptr<Screen> Screen;
+
 
 private:
 	sf::RenderWindow window_;

@@ -35,6 +35,7 @@ add_executable(sfSnake
     Screen.cpp
     Snake.cpp
     SnakeNode.cpp
+    SettingScreen.cpp
 )
 
 target_link_libraries(sfSnake PRIVATE SFML::Graphics SFML::Window SFML::Audio SFML::System)

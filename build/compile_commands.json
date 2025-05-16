@@ -55,6 +55,12 @@
 },
 {
   "directory": "E:/OOP/homework/lab/final/sfSnake/build",
+  "command": "D:\\Develop\\mingw64\\bin\\c++.exe -IE:/OOP/homework/lab/final/sfSnake -IE:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-src/include -g -std=gnu++17 -o CMakeFiles\\sfSnake.dir\\SettingScreen.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\SettingScreen.cpp",
+  "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\SettingScreen.cpp",
+  "output": "CMakeFiles\\sfSnake.dir\\SettingScreen.cpp.obj"
+},
+{
+  "directory": "E:/OOP/homework/lab/final/sfSnake/build",
   "command": "D:\\Develop\\mingw64\\bin\\c++.exe -DSFML_SYSTEM_EXPORTS -D_CRT_SECURE_NO_WARNINGS -D_WINSOCK_DEPRECATED_NO_WARNINGS -IE:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-src/include -IE:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-src/src -g -std=gnu++17 -fvisibility=hidden -fno-keep-inline-dllexport -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -Wsuggest-override -Wnull-dereference -Wold-style-cast -Wpedantic -Wmisleading-indentation -Wduplicated-cond -Wlogical-op -Wduplicated-branches -o _deps\\sfml-build\\src\\SFML\\System\\CMakeFiles\\sfml-system.dir\\Clock.cpp.obj -c E:\\OOP\\homework\\lab\\final\\sfSnake\\build\\_deps\\sfml-src\\src\\SFML\\System\\Clock.cpp",
   "file": "E:\\OOP\\homework\\lab\\final\\sfSnake\\build\\_deps\\sfml-src\\src\\SFML\\System\\Clock.cpp",
   "output": "_deps\\sfml-build\\src\\SFML\\System\\CMakeFiles\\sfml-system.dir\\Clock.cpp.obj"

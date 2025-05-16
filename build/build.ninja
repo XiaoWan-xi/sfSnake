@@ -112,6 +112,13 @@ build CMakeFiles/sfSnake.dir/SnakeNode.cpp.obj: CXX_COMPILER__sfSnake_unscanned_
   OBJECT_DIR = CMakeFiles\sfSnake.dir
   OBJECT_FILE_DIR = CMakeFiles\sfSnake.dir
 
+build CMakeFiles/sfSnake.dir/SettingScreen.cpp.obj: CXX_COMPILER__sfSnake_unscanned_Debug E$:/OOP/homework/lab/final/sfSnake/SettingScreen.cpp || cmake_object_order_depends_target_sfSnake
+  DEP_FILE = CMakeFiles\sfSnake.dir\SettingScreen.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IE:/OOP/homework/lab/final/sfSnake -IE:/OOP/homework/lab/final/sfSnake/build/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\sfSnake.dir
+  OBJECT_FILE_DIR = CMakeFiles\sfSnake.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target sfSnake
@@ -120,7 +127,7 @@ build CMakeFiles/sfSnake.dir/SnakeNode.cpp.obj: CXX_COMPILER__sfSnake_unscanned_
 #############################################
 # Link the executable bin\sfSnake.exe
 
-build bin/sfSnake.exe: CXX_EXECUTABLE_LINKER__sfSnake_Debug CMakeFiles/sfSnake.dir/main.cpp.obj CMakeFiles/sfSnake.dir/Fruit.cpp.obj CMakeFiles/sfSnake.dir/Game.cpp.obj CMakeFiles/sfSnake.dir/GameOverScreen.cpp.obj CMakeFiles/sfSnake.dir/GameScreen.cpp.obj CMakeFiles/sfSnake.dir/MenuScreen.cpp.obj CMakeFiles/sfSnake.dir/Screen.cpp.obj CMakeFiles/sfSnake.dir/Snake.cpp.obj CMakeFiles/sfSnake.dir/SnakeNode.cpp.obj | _deps/sfml-build/lib/libsfml-graphics-d.a _deps/sfml-build/lib/libsfml-window-d.a _deps/sfml-build/lib/libsfml-audio-d.a _deps/sfml-build/lib/libsfml-system-d.a || _deps/sfml-build/bin/sfml-audio-d-3.dll _deps/sfml-build/bin/sfml-graphics-d-3.dll _deps/sfml-build/bin/sfml-system-d-3.dll _deps/sfml-build/bin/sfml-window-d-3.dll
+build bin/sfSnake.exe: CXX_EXECUTABLE_LINKER__sfSnake_Debug CMakeFiles/sfSnake.dir/main.cpp.obj CMakeFiles/sfSnake.dir/Fruit.cpp.obj CMakeFiles/sfSnake.dir/Game.cpp.obj CMakeFiles/sfSnake.dir/GameOverScreen.cpp.obj CMakeFiles/sfSnake.dir/GameScreen.cpp.obj CMakeFiles/sfSnake.dir/MenuScreen.cpp.obj CMakeFiles/sfSnake.dir/Screen.cpp.obj CMakeFiles/sfSnake.dir/Snake.cpp.obj CMakeFiles/sfSnake.dir/SnakeNode.cpp.obj CMakeFiles/sfSnake.dir/SettingScreen.cpp.obj | _deps/sfml-build/lib/libsfml-graphics-d.a _deps/sfml-build/lib/libsfml-window-d.a _deps/sfml-build/lib/libsfml-audio-d.a _deps/sfml-build/lib/libsfml-system-d.a || _deps/sfml-build/bin/sfml-audio-d-3.dll _deps/sfml-build/bin/sfml-graphics-d-3.dll _deps/sfml-build/bin/sfml-system-d-3.dll _deps/sfml-build/bin/sfml-window-d-3.dll
   FLAGS = -g
   LINK_LIBRARIES = _deps/sfml-build/lib/libsfml-graphics-d.a  _deps/sfml-build/lib/libsfml-window-d.a  _deps/sfml-build/lib/libsfml-audio-d.a  _deps/sfml-build/lib/libsfml-system-d.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\sfSnake.dir

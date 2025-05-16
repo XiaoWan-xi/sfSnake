@@ -6,9 +6,11 @@
 #include "GameScreen.h"
 #include "GameOverScreen.h"
 #include "Game.h"
+#include "SnakeNode.h"
 
 using namespace sfSnake;
 
+bool GameScreen::gridVisible = false;
 GameScreen::GameScreen() : snake_()
 {
 
@@ -37,6 +39,9 @@ void GameScreen::render(sf::RenderWindow& window)
 
 	for (auto fruit : fruit_)
 		fruit.render(window);
+	
+	if(GameScreen::gridVisible) showGrid(window);
+	
 }
 
 void GameScreen::generateFruit()
@@ -48,5 +53,34 @@ void GameScreen::generateFruit()
 	static std::uniform_int_distribution<int> color(0,3);
 
 	fruit_.push_back(Fruit(sf::Vector2f(xDistribution(engine), yDistribution(engine)),static_cast<Color>(color(engine))));
+}
+
+void GameScreen::showGrid(sf::RenderWindow& window){
+	for(float x=0;x<=(float)Game::Width;x+=2*SnakeNode::Width){
+		sf::VertexArray line(sf::PrimitiveType::Lines,2);
+
+		line[0].position=sf::Vector2f(x,0.0f);
+		line[1].position=sf::Vector2f(x,(float)Game::Height);
+
+		line[0].color=sf::Color(70,70,70);
+		line[1].color=sf::Color(70,70,70);
+
+		window.draw(line);
+	}
+	for(float y=0;y<=(float)Game::Height;y+=2*SnakeNode::Height){
+		sf::VertexArray line(sf::PrimitiveType::Lines,2);
+
+		line[0].position=sf::Vector2f(0,y);
+		line[1].position=sf::Vector2f((float)Game::Width,y);
+
+		line[0].color=sf::Color(70,70,70);
+		line[1].color=sf::Color(70,70,70);
+
+		window.draw(line);
+	}
+}
+
+void GameScreen::setGridVisible(bool visible){
+	gridVisible = visible;
 }
 
