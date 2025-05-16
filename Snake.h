@@ -29,7 +29,7 @@ public:
 
 private:
 	void move();
-	void grow();
+	void grow(int length);
 	void checkEdgeCollisions();
 	void checkSelfCollisions();
 	void initNodes();

@@ -68,12 +68,17 @@ void Snake::checkFruitCollisions(std::vector<Fruit>& fruits)
 	if (toRemove != fruits.end())
 	{
 		pickupSound_.play();
-		grow();
+		switch(toRemove->getColor()){
+			case Color::BROWN:break;
+			case Color::RED:grow(3);break;
+			case Color::BLUE:grow(2);break;
+			case Color::GREEN:grow(1);break;
+		}
 		fruits.erase(toRemove);
 	}
 }
 
-void Snake::grow()
+void Snake::grow(int length)
 {
 	//also change the grow function to fit more direction
 	sf::Vector2f lastPos = nodes_[nodes_.size()-1].getPosition();
@@ -87,9 +92,9 @@ void Snake::grow()
 	}
 	//make the direction of grow more suitable
 	tailDirection=tailDirection.normalized();
-
-	nodes_.push_back(SnakeNode(sf::Vector2f(lastPos.x+SnakeNode::Width*tailDirection.x,lastPos.y+SnakeNode::Height*tailDirection.y)));
-
+	for(int i=0;i<length;++i){
+		nodes_.push_back(SnakeNode(sf::Vector2f(lastPos.x+SnakeNode::Width*tailDirection.x*(i+1),lastPos.y+SnakeNode::Height*tailDirection.y*(i+1))));
+	}
 }
 
 unsigned Snake::getSize() const

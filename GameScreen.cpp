@@ -41,11 +41,12 @@ void GameScreen::render(sf::RenderWindow& window)
 
 void GameScreen::generateFruit()
 {
-	static std::default_random_engine engine;
-	engine.seed(time(NULL));
+	static std::default_random_engine engine(time(NULL));
+	//engine.seed(time(NULL));
 	static std::uniform_int_distribution<int> xDistribution(0, Game::Width - SnakeNode::Width);
 	static std::uniform_int_distribution<int> yDistribution(0, Game::Height - SnakeNode::Height);
+	static std::uniform_int_distribution<int> color(0,3);
 
-	fruit_.push_back(Fruit(sf::Vector2f(xDistribution(engine), yDistribution(engine))));
+	fruit_.push_back(Fruit(sf::Vector2f(xDistribution(engine), yDistribution(engine)),static_cast<Color>(color(engine))));
 }
 
