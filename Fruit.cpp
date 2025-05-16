@@ -27,6 +27,10 @@ Color Fruit::getColor() const{
 	return color_;
 }
 
+sf::Vector2f Fruit::getPosition() const{
+	return shape_.getPosition();
+}
+
 //convert sfSnake::Color to sf::Color
 sf::Color sfSnake::convert(Color color){
 	switch(color){

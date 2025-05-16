@@ -17,7 +17,7 @@ class Snake
 public:
 	Snake();
 
-	void handleInput(sf::RenderWindow& window);
+	void handleInput(sf::RenderWindow& window,std::vector<Fruit>& fruits);
 	void update(sf::Time delta);
 	void render(sf::RenderWindow& window);
 
@@ -26,6 +26,8 @@ public:
 	bool hitSelf() const;
 
 	unsigned getSize() const;
+
+	static void setAIMode(bool aiMode);
 
 private:
 	void move();
@@ -50,6 +52,8 @@ private:
 	std::vector<SnakeNode> nodes_;
 
 	static const int InitialSize;
+
+	static bool AIMode;
 };
 }
 

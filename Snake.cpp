@@ -9,10 +9,13 @@
 #include "Fruit.h"
 #include "SnakeNode.h"
 #include "GameOverScreen.h"
+#include "GameScreen.h"
 
 using namespace sfSnake;
 
 const int Snake::InitialSize = 5;
+
+bool Snake::AIMode = false ;
 
 
 //use the initial list to initialize sound as its default construtctor is removed in new version
@@ -20,10 +23,14 @@ Snake::Snake() : direction_({0,-1}), hitSelf_(false),previousAngle_(0.0f),pickup
 {
 	initNodes();
 
-	pickupBuffer_.loadFromFile("Sounds/pickup.aiff");
+	if(!pickupBuffer_.loadFromFile("Sounds/pickup.aiff")){
+		std::cerr<<"Failed to load sound from file:Sounds/pickup.aiff"<<std::endl;
+	}
 	pickupSound_.setVolume(30);
 
-	dieBuffer_.loadFromFile("Sounds/die.wav");
+	if(!dieBuffer_.loadFromFile("Sounds/die.wav")){
+		std::cerr<<"Failed to load sound from file:Sounds/die.wav"<<std::endl;
+	}
 	dieSound_.setVolume(50);
 }
 
@@ -42,17 +49,26 @@ void Snake::initNodes()
 	updateNodeRotation();
 }
 
-void Snake::handleInput(sf::RenderWindow& window)
+void Snake::handleInput(sf::RenderWindow& window,std::vector<Fruit>& fruits)
 {
-	//change the input frow four keys into the mouse click
-	if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-	{
-		sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-		sf::Vector2f headPos = nodes_[0].getPosition();
-		direction_ = {static_cast<float>(mousePos.x) - headPos.x, static_cast<float>(mousePos.y) - headPos.y};
-		direction_=direction_.normalized();
+	if(!AIMode){
+		//change the input frow four keys into the mouse click
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+		{
+			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+			sf::Vector2f headPos = nodes_[0].getPosition();
+			direction_ = {static_cast<float>(mousePos.x) - headPos.x, static_cast<float>(mousePos.y) - headPos.y};
+			direction_=direction_.normalized();
 
-		updateNodeRotation();
+			updateNodeRotation();
+		}
+	}
+	else{
+		sf::Vector2f fruitPos = fruits[0].getPosition();
+		sf::Vector2f nextDirection = fruitPos-nodes_[0].getPosition();
+		if(nextDirection.x * direction_.x + nextDirection.y * direction_.y >= 0){
+			direction_=nextDirection.normalized();
+		}
 	}
 }
 
@@ -181,4 +197,8 @@ void Snake::render(sf::RenderWindow& window)
 {
 	for (auto& node : nodes_)
 		node.render(window);
+}
+
+void Snake::setAIMode(bool aiMode){
+	AIMode = aiMode;
 }

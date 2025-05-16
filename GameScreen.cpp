@@ -18,7 +18,7 @@ GameScreen::GameScreen() : snake_()
 
 void GameScreen::handleInput(sf::RenderWindow& window)
 {
-	snake_.handleInput(window);
+	snake_.handleInput(window,fruit_);
 }
 
 void GameScreen::update(sf::Time delta)
@@ -83,4 +83,5 @@ void GameScreen::showGrid(sf::RenderWindow& window){
 void GameScreen::setGridVisible(bool visible){
 	gridVisible = visible;
 }
+
 

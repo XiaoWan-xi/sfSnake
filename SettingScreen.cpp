@@ -39,9 +39,11 @@ void SettingScreen::handleInput(sf::RenderWindow& window){
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Y)){
       GameScreen::setGridVisible(true);
+      std::cout<<"grid visible now"<<std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::N)){
       GameScreen::setGridVisible(false);
+      std::cout<<"grid invisible now"<<std::endl;
     }
     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)){
       Game::Screen = std::make_shared<MenuScreen>();

@@ -20,6 +20,8 @@ public:
 
 	Color getColor() const;
 
+	sf::Vector2f getPosition() const ;
+
 	friend sf::Color convert(Color color);
 
 private:

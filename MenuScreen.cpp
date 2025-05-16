@@ -13,8 +13,9 @@ using namespace sfSnake;
 
 //use the initial list to initialize text as its default construtctor is removed in new version
 MenuScreen::MenuScreen():text_(font_,
-		"\n\n\n\n\n\nPress [S] to setting"
-		"\n\n\nPress [SPACE] to play"
+		"\n\n\n\n\nPress [A] to enter AI mode"
+		"\n\n\nPress [S] to setting"
+		"\n\nPress [SPACE] to play"
 		"\n\nPress [ESC] to quit"),snakeText_(font_,"Snake!")
 {	
 	//use new version openFromFile instead of loadFromFile
@@ -45,6 +46,11 @@ void MenuScreen::handleInput(sf::RenderWindow& window)
 		window.close();
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
 		Game::Screen = std::make_shared<SettingScreen>();
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)){
+		Snake::setAIMode(true);
+		std::cout<<"triggle on the ai mode"<<std::endl;
+	}
+
 
 }
 
