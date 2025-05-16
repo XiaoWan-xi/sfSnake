@@ -33,11 +33,13 @@ private:
 	void checkEdgeCollisions();
 	void checkSelfCollisions();
 	void initNodes();
+	void updateNodeRotation();
 
 	bool hitSelf_;
 
 	sf::Vector2f position_;
 	sf::Vector2f direction_;
+	float previousAngle_;
 
 	sf::SoundBuffer pickupBuffer_;
 	sf::Sound pickupSound_;

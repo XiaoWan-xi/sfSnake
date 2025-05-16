@@ -21,7 +21,7 @@ set(BUILD_SHARED_LIBS ON CACHE BOOL "" FORCE)
 FetchContent_Declare(
     sfml
     GIT_REPOSITORY https://github.com/SFML/SFML.git
-    GIT_TAG master
+    GIT_TAG 3.0.0
 )
 FetchContent_MakeAvailable(sfml)
 
@@ -65,4 +65,9 @@ add_custom_command(TARGET sfSnake POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
         "${CMAKE_CURRENT_SOURCE_DIR}/Sounds"
         "$<TARGET_FILE_DIR:sfSnake>/Sounds"
+)
+add_custom_command(TARGET sfSnake POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_CURRENT_SOURCE_DIR}/Textures"
+        "$<TARGET_FILE_DIR:sfSnake>/Textures"
 )

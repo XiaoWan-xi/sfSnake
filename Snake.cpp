@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <iostream>
+#include <cmath>
 
 #include "Snake.h"
 #include "Game.h"
@@ -15,7 +16,7 @@ const int Snake::InitialSize = 5;
 
 
 //use the initial list to initialize sound as its default construtctor is removed in new version
-Snake::Snake() : direction_({0,-1}), hitSelf_(false),pickupSound_(pickupBuffer_),dieSound_(dieBuffer_)
+Snake::Snake() : direction_({0,-1}), hitSelf_(false),previousAngle_(0.0f),pickupSound_(pickupBuffer_),dieSound_(dieBuffer_)
 {
 	initNodes();
 
@@ -27,13 +28,18 @@ Snake::Snake() : direction_({0,-1}), hitSelf_(false),pickupSound_(pickupBuffer_)
 }
 
 void Snake::initNodes()
-{
-	for (int i = 0; i < Snake::InitialSize; ++i)
+{	
+	nodes_.push_back(SnakeNode(sf::Vector2f(Game::Width/2-SnakeNode::Width/2,Game::Height/2-SnakeNode::Height/2),NodeType::HEAD));
+
+	for (int i = 1; i < Snake::InitialSize; ++i)
 	{
+		NodeType type = (i%2==0)?NodeType::BODY_CIRCLE:NodeType::BODY_RECTANGLE;
 		nodes_.push_back(SnakeNode(sf::Vector2f(
 			Game::Width / 2 - SnakeNode::Width / 2,
-			Game::Height / 2 - (SnakeNode::Height / 2) + (SnakeNode::Height * i))));
+			Game::Height / 2 - (SnakeNode::Height / 2) + (SnakeNode::Height * i)),type));
 	}
+
+	updateNodeRotation();
 }
 
 void Snake::handleInput(sf::RenderWindow& window)
@@ -45,7 +51,28 @@ void Snake::handleInput(sf::RenderWindow& window)
 		sf::Vector2f headPos = nodes_[0].getPosition();
 		direction_ = {static_cast<float>(mousePos.x) - headPos.x, static_cast<float>(mousePos.y) - headPos.y};
 		direction_=direction_.normalized();
+
+		updateNodeRotation();
 	}
+}
+
+void Snake::updateNodeRotation(){
+
+	float angle = std::atan2(direction_.y,direction_.x);
+
+	nodes_[0].setRotation(angle);
+
+	for(decltype(nodes_.size()) i =1;i<nodes_.size();++i){
+		if(i%2==1){
+			sf::Vector2f pos=nodes_[i].getPosition();
+			sf::Vector2f nextPos= (i+1<nodes_.size())? nodes_[i+1].getPosition() : pos+pos-nodes_[i-1].getPosition();
+
+			float segmentAngle = std::atan2(nextPos.y-pos.y,nextPos.x-pos.x);
+			nodes_[i].setRotation(segmentAngle);
+		}
+	}
+
+	previousAngle_=angle;
 }
 
 void Snake::update(sf::Time delta)
@@ -53,6 +80,7 @@ void Snake::update(sf::Time delta)
 	move();
 	checkEdgeCollisions();
 	checkSelfCollisions();
+	updateNodeRotation();
 }
 
 void Snake::checkFruitCollisions(std::vector<Fruit>& fruits)
@@ -92,9 +120,13 @@ void Snake::grow(int length)
 	}
 	//make the direction of grow more suitable
 	tailDirection=tailDirection.normalized();
+	int size = nodes_.size();
 	for(int i=0;i<length;++i){
-		nodes_.push_back(SnakeNode(sf::Vector2f(lastPos.x+SnakeNode::Width*tailDirection.x*(i+1),lastPos.y+SnakeNode::Height*tailDirection.y*(i+1))));
+		NodeType type=(size+i)%2==0 ? NodeType::BODY_CIRCLE : NodeType::BODY_RECTANGLE ;
+		nodes_.push_back(SnakeNode(sf::Vector2f(lastPos.x+SnakeNode::Width*tailDirection.x*(i+1),lastPos.y+SnakeNode::Height*tailDirection.y*(i+1)),type));
 	}
+
+	updateNodeRotation();
 }
 
 unsigned Snake::getSize() const

@@ -5,13 +5,21 @@
 
 namespace sfSnake
 {
+
+enum class NodeType{
+	HEAD,
+    BODY_CIRCLE,
+    BODY_RECTANGLE
+};
+
 class SnakeNode
 {
 public:
-	SnakeNode(sf::Vector2f position = sf::Vector2f(0, 0));
+	SnakeNode(sf::Vector2f position = sf::Vector2f(0, 0),NodeType type = NodeType::BODY_CIRCLE);
 
 	void setPosition(sf::Vector2f position);
 	void setPosition(float x, float y);
+	void setRotation(float angle);
 
 	void move(float xOffset, float yOffset);
 
@@ -24,8 +32,16 @@ public:
 	static const float Height;
 
 private:
-	sf::RectangleShape shape_;
-	sf::Vector2f position_;
+
+	NodeType type_;
+    sf::Vector2f position_;
+    
+    sf::CircleShape circleShape_;
+    sf::RectangleShape rectangleShape_;
+    sf::Sprite headSprite_;
+    
+    static sf::Texture headTexture_;
+	static bool textureLoaded_;
 };
 }
 
